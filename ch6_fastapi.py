@@ -7,9 +7,7 @@ import openai
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query, status
 
-from ch6_fastapi_utils import (
-    Genre, get_books_by_genre, get_recommendations, get_top_10
-)
+from ch6_fastapi_utils import Genre, get_books_by_genre, get_recommendations, get_top_10
 from database import books as books_db
 
 load_dotenv()
@@ -28,9 +26,7 @@ async def top_10() -> list[dict]:
 
 
 @app.get("/books")
-async def get_books(
-    limit: int = 10, genre: list[Genre] = Query(None)
-) -> list[dict]:
+async def get_books(limit: int = 10, genre: list[Genre] = Query(None)) -> list[dict]:
     if limit > 100:
         raise ValueError("Limit should be less than or equal to 100")
     return await get_books_by_genre(books_db, genre, limit)

@@ -1,6 +1,7 @@
-import logfire
+from time import sleep, time
 from typing import Callable
-from time import time, sleep
+
+import logfire
 
 
 @logfire.instrument()
