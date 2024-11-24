@@ -23,5 +23,6 @@ def main(func: Callable, sleep_time: float) -> None:
 
 if __name__ == "__main__":
     logfire.configure()
-    main(decorated_func, 0.5)
-    main(clean_func, 0.5)
+    sleep_time = 0.5
+    main(decorated_func, sleep_time)
+    main(clean_func, sleep_time)
