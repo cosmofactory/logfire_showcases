@@ -1,0 +1,6 @@
+black==24.10.0
+fastapi==0.115.5
+isort==5.13.2
+logfire==2.3.0
+python-dotenv==1.0.1
+openai==1.54.4
